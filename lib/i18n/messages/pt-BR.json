@@ -1,0 +1,21 @@
+{
+  "app": {
+    "title": "Moita CRM",
+    "subtitle": "Gestão comercial inteligente com foco no Brasil"
+  },
+  "auth": {
+    "signIn": "Entrar",
+    "email": "E-mail",
+    "password": "Senha",
+    "remember": "Lembrar-me",
+    "google": "Entrar com Google"
+  },
+  "navigation": {
+    "pipelines": "Pipelines",
+    "leads": "Leads",
+    "tasks": "Tarefas",
+    "calendar": "Calendário",
+    "reports": "Relatórios",
+    "settings": "Configurações"
+  }
+}

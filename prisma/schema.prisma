@@ -1,0 +1,291 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  admin
+  manager
+  rep
+}
+
+enum ActivityTipo {
+  call
+  meet
+  email
+  whatsapp
+  tarefa
+}
+
+enum CustomFieldScope {
+  lead
+  deal
+  organization
+  pipeline
+}
+
+enum CustomFieldTipo {
+  text
+  number
+  date
+  select
+  multiselect
+  boolean
+}
+
+enum SLAAlvo {
+  primeiro_contato
+  mover_estagio
+}
+
+model User {
+  id         String   @id @default(cuid())
+  nome       String
+  email      String   @unique
+  senha_hash String?
+  role       Role     @default(rep)
+  timezone   String   @default("America/Fortaleza")
+  ativo      Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  memberships Membership[]
+  organizations Organization[] @relation("OrganizationOwner")
+  leads        Lead[]          @relation("LeadOwner")
+  deals        Deal[]          @relation("DealResponsavel")
+  activities   Activity[]      @relation("ActivityOwner")
+  notes        Note[]          @relation("NoteAuthor")
+  files        File[]          @relation("FileAuthor")
+  auditLogs    AuditLog[]      @relation("AuditActor")
+}
+
+model Organization {
+  id            String   @id @default(cuid())
+  nome          String
+  cnpj_opcional String?
+  ownerId       String
+  owner         User     @relation("OrganizationOwner", fields: [ownerId], references: [id])
+  memberships   Membership[]
+  pipelines     Pipeline[]
+  leads         Lead[]
+  activities    Activity[]
+  calendar      CalendarEvent[]
+  customFields  CustomFieldDefinition[]
+  notes         Note[]
+  files         File[]
+  auditLogs     AuditLog[]
+  webhooks      Webhook[]
+  scoringRules  ScoringRule[]
+  slaConfigs    SLAConfig[]
+}
+
+model Membership {
+  id             String @id @default(cuid())
+  userId         String
+  organizationId String
+  role           Role
+  user           User         @relation(fields: [userId], references: [id])
+  organization   Organization @relation(fields: [organizationId], references: [id])
+
+  @@unique([userId, organizationId])
+}
+
+model Pipeline {
+  id             String   @id @default(cuid())
+  organizationId String
+  nome           String
+  descricao      String?
+  ordem          Int
+  stages         Stage[]
+  organization   Organization @relation(fields: [organizationId], references: [id])
+}
+
+model Stage {
+  id           String  @id @default(cuid())
+  pipelineId   String
+  nome         String
+  ordem        Int
+  probabilidade Float @default(0.1)
+  pipeline     Pipeline @relation(fields: [pipelineId], references: [id])
+  deals        Deal[]
+}
+
+model Lead {
+  id                   String   @id @default(cuid())
+  organizationId       String
+  nome                 String
+  empresa              String?
+  email                String?
+  telefone             String?
+  origem               String?
+  ownerId              String?
+  score                Int      @default(0)
+  status               String   @default("novo")
+  consentimentoContato Boolean  @default(true)
+  doNotContact         Boolean  @default(false)
+  createdAt            DateTime @default(now())
+  organization         Organization @relation(fields: [organizationId], references: [id])
+  owner                User?    @relation("LeadOwner", fields: [ownerId], references: [id])
+  deals                Deal[]
+  activities           Activity[]
+  notes                Note[]
+  files                File[]
+  customValues         CustomFieldValue[]
+
+  @@index([organizationId])
+}
+
+model Deal {
+  id                     String   @id @default(cuid())
+  leadId                 String
+  pipelineId             String
+  stageId                String
+  valorPrevistoBRL       Float    @default(0)
+  moeda                  String   @default("BRL")
+  probabilidade          Float    @default(0)
+  dataFechamentoPrevista DateTime?
+  responsavelId          String?
+  lead                   Lead     @relation(fields: [leadId], references: [id])
+  pipeline               Pipeline @relation(fields: [pipelineId], references: [id])
+  stage                  Stage    @relation(fields: [stageId], references: [id])
+  responsavel            User?    @relation("DealResponsavel", fields: [responsavelId], references: [id])
+  activities             Activity[]
+  notes                  Note[]
+  files                  File[]
+  customValues           CustomFieldValue[]
+
+  @@index([pipelineId])
+}
+
+model Activity {
+  id              String        @id @default(cuid())
+  organizationId  String
+  leadId          String?
+  dealId          String?
+  tipo            ActivityTipo
+  titulo          String
+  descricao       String?
+  dueAt           DateTime?
+  doneAt          DateTime?
+  ownerId         String
+  createdAt       DateTime @default(now())
+  organization    Organization @relation(fields: [organizationId], references: [id])
+  lead            Lead?         @relation(fields: [leadId], references: [id])
+  deal            Deal?         @relation(fields: [dealId], references: [id])
+  owner           User          @relation("ActivityOwner", fields: [ownerId], references: [id])
+}
+
+model CalendarEvent {
+  id              String   @id @default(cuid())
+  organizationId  String
+  titulo          String
+  descricao       String?
+  inicio          DateTime
+  fim             DateTime
+  allDay          Boolean  @default(false)
+  ownerId         String
+  relatedLeadId   String?
+  relatedDealId   String?
+  organization    Organization @relation(fields: [organizationId], references: [id])
+  owner           User          @relation(fields: [ownerId], references: [id])
+  relatedLead     Lead?         @relation(fields: [relatedLeadId], references: [id])
+  relatedDeal     Deal?         @relation(fields: [relatedDealId], references: [id])
+}
+
+model CustomFieldDefinition {
+  id             String           @id @default(cuid())
+  organizationId String
+  scope          CustomFieldScope
+  key            String
+  label          String
+  tipo           CustomFieldTipo
+  options        String[]
+  required       Boolean @default(false)
+  uniquePerOrg   Boolean @default(false)
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  values         CustomFieldValue[]
+
+  @@unique([organizationId, key])
+}
+
+model CustomFieldValue {
+  id           String   @id @default(cuid())
+  definitionId String
+  entityId     String
+  value_json   Json
+  definition   CustomFieldDefinition @relation(fields: [definitionId], references: [id])
+}
+
+model Note {
+  id             String   @id @default(cuid())
+  organizationId String
+  leadId         String?
+  dealId         String?
+  authorId       String
+  content        String
+  createdAt      DateTime @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  lead           Lead?         @relation(fields: [leadId], references: [id])
+  deal           Deal?         @relation(fields: [dealId], references: [id])
+  author         User          @relation("NoteAuthor", fields: [authorId], references: [id])
+}
+
+model File {
+  id             String   @id @default(cuid())
+  organizationId String
+  leadId         String?
+  dealId         String?
+  authorId       String
+  name           String
+  url            String
+  mime           String
+  size           Int
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  lead           Lead?         @relation(fields: [leadId], references: [id])
+  deal           Deal?         @relation(fields: [dealId], references: [id])
+  author         User          @relation("FileAuthor", fields: [authorId], references: [id])
+}
+
+model AuditLog {
+  id             String   @id @default(cuid())
+  organizationId String
+  actorId        String
+  action         String
+  entityType     String
+  entityId       String
+  diff_json      Json
+  createdAt      DateTime @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  actor          User          @relation("AuditActor", fields: [actorId], references: [id])
+}
+
+model Webhook {
+  id             String   @id @default(cuid())
+  organizationId String
+  url            String
+  secret         String
+  events         String[]
+  organization   Organization @relation(fields: [organizationId], references: [id])
+}
+
+model ScoringRule {
+  id             String   @id @default(cuid())
+  organizationId String
+  nome           String
+  peso           Float
+  condicao_json  Json
+  ativo          Boolean @default(true)
+  organization   Organization @relation(fields: [organizationId], references: [id])
+}
+
+model SLAConfig {
+  id             String   @id @default(cuid())
+  organizationId String
+  nome           String
+  alvo           SLAAlvo
+  prazoMinutos   Int
+  ativo          Boolean @default(true)
+  organization   Organization @relation(fields: [organizationId], references: [id])
+}
