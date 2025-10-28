@@ -59,6 +59,20 @@ Variáveis principais:
 - `npm run db:migrate` – aplica migrações Prisma
 - `npm run db:seed` – executa seeds (requer `DATABASE_URL` configurada)
 
+## Preview estático
+
+Quer validar rapidamente o fluxo completo antes de executar a stack? Abra os arquivos em `preview/` diretamente no navegador (duplo clique) ou sirva a pasta com `npx serve preview`. Cada tela replica o layout, copy e interações planejadas na aplicação Next.js e possui alternância entre temas claro/escuro.
+
+| Tela | Caminho | Destaques |
+| --- | --- | --- |
+| Hub de navegação | `preview/index.html` | Coleção de telas, instruções de execução com Docker e credenciais demo. |
+| Login | `preview/login.html` | Formulário NextAuth com validação Zod e feedback de erros. |
+| Dashboard | `preview/dashboard.html` | KPIs, snapshot de pipeline, heatmap de atividades e conversão por origem. |
+| Leads | `preview/leads.html` | Lista com filtros salvos, quick view, consentimento LGPD e ações rápidas. |
+| Pipelines | `preview/pipeline.html` | Kanban por estágio com totais previstos e estados de DnD ilustrativos. |
+| Calendário | `preview/calendar.html` | Agenda semanal integrada com BullMQ e Google Calendar. |
+| Tarefas | `preview/tarefas.html` | Kanban + agenda de atividades com foco em SLA. |
+
 ## Executando com docker-compose
 
 ```

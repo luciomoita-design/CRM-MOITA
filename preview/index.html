@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moita CRM — Preview Interativo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <div class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      <header class="border-b border-white/10 bg-slate-950/70 backdrop-blur">
+        <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/30">
+              <span class="text-lg font-semibold">MC</span>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-emerald-300/80">Moita CRM</p>
+              <h1 class="text-xl font-semibold text-white">Preview interativo</h1>
+            </div>
+          </div>
+          <a
+            href="../README.md"
+            class="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:border-emerald-400/60 hover:bg-emerald-400/10"
+          >
+            Guia de instalação completo
+          </a>
+        </div>
+      </header>
+
+      <main class="mx-auto flex max-w-5xl flex-col gap-16 px-6 py-12">
+        <section class="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+          <h2 class="text-lg font-semibold text-white">Como explorar rapidamente</h2>
+          <p class="text-sm text-slate-200/80">
+            Estes mockups estáticos representam os fluxos principais do Moita CRM e podem ser abertos em qualquer navegador.
+            Cada tela foi montada com os mesmos componentes e diretrizes de UI utilizadas no app Next.js, permitindo validar o layout,
+            copy e interações antes de subir o ambiente completo.
+          </p>
+          <ol class="grid gap-2 text-sm text-slate-200/80">
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/40">1</span>
+              <span>Acesse os cards abaixo para abrir cada visão em uma nova aba.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/40">2</span>
+              <span>Use o modo claro/escuro embutido nos mockups para conferir as duas variações de tema.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/40">3</span>
+              <span>Para uma experiência completa, siga o README e execute <code class="rounded bg-slate-900 px-1.5 py-0.5 text-xs">docker compose up</code>.</span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="grid gap-8">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-white">Coleção de telas</h2>
+            <p class="text-sm text-slate-200/60">Abra quantas quiser ao mesmo tempo para validar fluxos completos.</p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <a
+              href="login.html"
+              class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-emerald-500/50 hover:bg-emerald-500/10"
+              target="_blank"
+            >
+              <div class="flex items-center justify-between text-sm text-emerald-300/80">
+                <span class="font-medium uppercase tracking-[0.25em]">Autenticação</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">Preview</span>
+              </div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Tela de login segura</h3>
+              <p class="mt-2 text-sm text-slate-200/80">
+                Formulário com validação Zod, NextAuth credencial e mensagens em português.
+              </p>
+              <img
+                src="https://raw.githubusercontent.com/onezerocompany/assets/main/moita/login-thumb.png"
+                alt="Preview da tela de login"
+                class="mt-6 w-full rounded-2xl border border-white/10"
+                loading="lazy"
+              />
+            </a>
+
+            <a
+              href="dashboard.html"
+              class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-emerald-500/50 hover:bg-emerald-500/10"
+              target="_blank"
+            >
+              <div class="flex items-center justify-between text-sm text-emerald-300/80">
+                <span class="font-medium uppercase tracking-[0.25em]">Visão geral</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">Preview</span>
+              </div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Dashboard operacional</h3>
+              <p class="mt-2 text-sm text-slate-200/80">
+                KPIs, timeline de atividades recentes e snapshot das pipelines com totais previstos.
+              </p>
+              <img
+                src="https://raw.githubusercontent.com/onezerocompany/assets/main/moita/dashboard-thumb.png"
+                alt="Preview do dashboard"
+                class="mt-6 w-full rounded-2xl border border-white/10"
+                loading="lazy"
+              />
+            </a>
+
+            <a
+              href="leads.html"
+              class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-emerald-500/50 hover:bg-emerald-500/10"
+              target="_blank"
+            >
+              <div class="flex items-center justify-between text-sm text-emerald-300/80">
+                <span class="font-medium uppercase tracking-[0.25em]">Gestão de leads</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">Preview</span>
+              </div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Lista dinâmica com filtros</h3>
+              <p class="mt-2 text-sm text-slate-200/80">
+                Buscas combináveis, quick view com notas e campos personalizados por organização.
+              </p>
+              <img
+                src="https://raw.githubusercontent.com/onezerocompany/assets/main/moita/leads-thumb.png"
+                alt="Preview da tela de leads"
+                class="mt-6 w-full rounded-2xl border border-white/10"
+                loading="lazy"
+              />
+            </a>
+
+            <a
+              href="pipeline.html"
+              class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-emerald-500/50 hover:bg-emerald-500/10"
+              target="_blank"
+            >
+              <div class="flex items-center justify-between text-sm text-emerald-300/80">
+                <span class="font-medium uppercase tracking-[0.25em]">Vendas</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">Preview</span>
+              </div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Kanban com estágios</h3>
+              <p class="mt-2 text-sm text-slate-200/80">
+                Arraste e solte, contadores, probabilidade e total previsto por coluna.
+              </p>
+              <img
+                src="https://raw.githubusercontent.com/onezerocompany/assets/main/moita/pipeline-thumb.png"
+                alt="Preview do kanban de pipelines"
+                class="mt-6 w-full rounded-2xl border border-white/10"
+                loading="lazy"
+              />
+            </a>
+
+            <a
+              href="calendar.html"
+              class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-emerald-500/50 hover:bg-emerald-500/10"
+              target="_blank"
+            >
+              <div class="flex items-center justify-between text-sm text-emerald-300/80">
+                <span class="font-medium uppercase tracking-[0.25em]">Agenda</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">Preview</span>
+              </div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Calendário 360°</h3>
+              <p class="mt-2 text-sm text-slate-200/80">
+                Visualizações mês/semana/dia, arrastar-soltar e criação rápida via atalho <kbd class="rounded bg-slate-900 px-1 text-xs">Q</kbd>.
+              </p>
+              <img
+                src="https://raw.githubusercontent.com/onezerocompany/assets/main/moita/calendar-thumb.png"
+                alt="Preview do calendário"
+                class="mt-6 w-full rounded-2xl border border-white/10"
+                loading="lazy"
+              />
+            </a>
+
+            <a
+              href="tarefas.html"
+              class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-emerald-500/50 hover:bg-emerald-500/10"
+              target="_blank"
+            >
+              <div class="flex items-center justify-between text-sm text-emerald-300/80">
+                <span class="font-medium uppercase tracking-[0.25em]">Produtividade</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">Preview</span>
+              </div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Kanban de tarefas</h3>
+              <p class="mt-2 text-sm text-slate-200/80">
+                Visualização híbrida kanban + agenda, filtros por owner e status.
+              </p>
+              <img
+                src="https://raw.githubusercontent.com/onezerocompany/assets/main/moita/tasks-thumb.png"
+                alt="Preview do board de tarefas"
+                class="mt-6 w-full rounded-2xl border border-white/10"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </section>
+
+        <section class="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-8">
+          <h2 class="text-lg font-semibold text-white">Quer testar com dados reais?</h2>
+          <div class="grid gap-4 text-sm text-slate-200/80">
+            <p>
+              Siga o passo a passo do README para subir toda a stack com Docker (PostgreSQL, Redis, BullMQ, Next.js e coletor OpenTelemetry).
+              O seed já inclui organização demo, pipeline padrão e leads para explorar rapidamente.
+            </p>
+            <div class="grid gap-2 rounded-2xl border border-white/10 bg-slate-950/40 p-4 text-xs text-slate-200/70">
+              <code>$ cp .env.example .env</code>
+              <code>$ docker compose up --build</code>
+              <code>$ open http://localhost:3000</code>
+            </div>
+            <p>
+              Usuário demo admin: <span class="font-semibold text-white">admin@moita.crm</span> / senha <span class="font-semibold text-white">moita123</span>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-white/10 bg-slate-950/80 py-6 text-center text-xs text-slate-400">
+        Moita CRM &copy; 2024 — Conformidade LGPD, hospedagem compatível com Brasil.
+      </footer>
+    </div>
+  </body>
+</html>
