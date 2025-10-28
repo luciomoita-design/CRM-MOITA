@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moita CRM - Login Preview</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at top, #f8fafc, #e2e8f0);
+        color: #0f172a;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border-radius: 1rem;
+        padding: 3rem 3.5rem;
+        box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+        max-width: 420px;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        margin-top: 0;
+        color: #475569;
+      }
+
+      label {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+        color: #1e293b;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid #cbd5f5;
+        background: rgba(248, 250, 252, 0.85);
+        font-size: 1rem;
+        color: #0f172a;
+        transition: box-shadow 0.2s ease, border 0.2s ease;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+      }
+
+      .field {
+        margin-top: 1.25rem;
+      }
+
+      button {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        margin-top: 1.5rem;
+        border-radius: 0.9rem;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .primary {
+        background: linear-gradient(120deg, #2563eb, #1d4ed8);
+        color: #fff;
+        box-shadow: 0 15px 30px rgba(37, 99, 235, 0.35);
+      }
+
+      .primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(37, 99, 235, 0.45);
+      }
+
+      .secondary {
+        background: rgba(241, 245, 249, 0.9);
+        color: #1e293b;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .secondary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 26px rgba(148, 163, 184, 0.35);
+      }
+
+      .footer {
+        margin-top: 2rem;
+        font-size: 0.85rem;
+        color: #64748b;
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        background: rgba(15, 23, 42, 0.8);
+        color: #e2e8f0;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: radial-gradient(circle at top, #0f172a, #020617);
+          color: #f8fafc;
+        }
+
+        .card {
+          background: rgba(15, 23, 42, 0.85);
+          box-shadow: 0 30px 60px rgba(15, 23, 42, 0.65);
+        }
+
+        p {
+          color: #cbd5f5;
+        }
+
+        label {
+          color: #e2e8f0;
+        }
+
+        input {
+          border-color: rgba(30, 41, 59, 0.9);
+          background: rgba(15, 23, 42, 0.9);
+          color: #f8fafc;
+        }
+
+        .secondary {
+          background: rgba(30, 41, 59, 0.8);
+          color: #f8fafc;
+        }
+
+        .footer {
+          color: #94a3b8;
+        }
+      }
+
+      .google-icon {
+        width: 16px;
+        height: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <div class="badge">Moita CRM · Preview</div>
+        <h1>Bem-vindo de volta</h1>
+        <p>Centralize leads, vendas e tarefas em um único fluxo.</p>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail corporativo</label>
+        <input id="email" type="email" placeholder="seu.nome@empresa.com" />
+      </div>
+
+      <div class="field">
+        <label for="password">Senha</label>
+        <input id="password" type="password" placeholder="••••••••" />
+      </div>
+
+      <button class="primary">Entrar</button>
+      <button class="secondary">
+        <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+          <path fill="#4285F4" d="M488 261.8c0-17.8-1.6-35-4.7-51.8H249v98h134.3c-5.8 31.2-23.5 57.7-50 75.5v62.7h80.8c47.3-43.6 74.9-107.9 74.9-184.4z" />
+          <path fill="#34A853" d="M249 492c67.7 0 124.7-22.5 166.3-61.1l-80.8-62.7c-22.4 15-51.1 23.8-85.5 23.8-65.9 0-121.8-44.5-141.8-104.3H23.8v65.3C65.2 446.5 150.5 492 249 492z" />
+          <path fill="#FBBC05" d="M107.2 287.7c-5-15-7.9-31.1-7.9-47.7s2.9-32.7 7.9-47.7V127H23.8C8.5 162 0 201.1 0 240s8.5 78 23.8 113l83.4-65.3z" />
+          <path fill="#EA4335" d="M249 97.3c35.6 0 67.7 12.2 92.9 36.1l69.6-69.6C373.7 24.2 316.7 0 249 0 150.5 0 65.2 45.5 23.8 127l83.4 65.3C127.2 141.8 183.1 97.3 249 97.3z" />
+        </svg>
+        Entrar com Google
+      </button>
+
+      <div class="footer">LGPD-ready · Timezones BR · Auditoria completa</div>
+    </div>
+  </body>
+</html>

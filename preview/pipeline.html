@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pipelines — Moita CRM Preview</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>tailwind.config = { darkMode: 'class' };</script>
+    <style>
+      body {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+      .ghost-card {
+        background: repeating-linear-gradient(135deg, rgba(148, 163, 184, 0.15), rgba(148, 163, 184, 0.15) 8px, rgba(148, 163, 184, 0.05) 8px, rgba(148, 163, 184, 0.05) 16px);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <div class="flex min-h-screen">
+      <aside class="hidden w-64 flex-col border-r border-slate-800/80 bg-slate-950/80 p-6 lg:flex">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">MC</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.3em] text-emerald-200/70">Moita CRM</p>
+            <h1 class="text-base font-semibold text-white">Pipelines</h1>
+          </div>
+        </div>
+        <nav class="mt-8 flex flex-1 flex-col gap-1 text-sm">
+          <a class="rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="dashboard.html">Dashboard</a>
+          <a class="rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="leads.html">Leads</a>
+          <a class="flex items-center justify-between rounded-lg px-3 py-2 font-medium text-white ring-1 ring-inset ring-emerald-500/40 bg-emerald-500/10" href="pipeline.html">Pipelines</a>
+          <a class="rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="tarefas.html">Tarefas</a>
+          <a class="rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="calendar.html">Calendário</a>
+          <a class="mt-auto rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="#">Configurações</a>
+        </nav>
+      </aside>
+      <div class="flex flex-1 flex-col">
+        <header class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 bg-slate-950/80 px-6 py-4 backdrop-blur">
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Pipelines</p>
+            <h2 class="text-lg font-semibold text-white">Kanban comercial — Pipeline Enterprise</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="theme-toggle" class="rounded-full border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs font-medium text-slate-200 hover:border-emerald-500/60 hover:text-white">
+              Alternar tema
+            </button>
+            <button class="rounded-lg bg-emerald-500 px-4 py-2 text-xs font-semibold text-emerald-950 shadow shadow-emerald-500/40">
+              + Novo negócio
+            </button>
+          </div>
+        </header>
+        <main class="flex-1 space-y-6 bg-slate-950/60 px-6 py-6">
+          <section class="flex flex-wrap items-center gap-3 text-xs text-slate-300">
+            <div class="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900 px-3 py-1.5">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              <span>SLA primeiro contato: 30 min · 92% OK</span>
+            </div>
+            <div class="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900 px-3 py-1.5">
+              <span>Total previsto:</span>
+              <span class="font-semibold text-white">R$ 482.300</span>
+            </div>
+            <div class="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900 px-3 py-1.5">
+              <span>Probabilidade ponderada:</span>
+              <span class="font-semibold text-white">47%</span>
+            </div>
+          </section>
+          <section class="grid gap-4 overflow-x-auto rounded-3xl border border-slate-800 bg-slate-950/70 p-6 text-sm text-slate-200 xl:grid-cols-5">
+            <article class="flex min-w-[220px] flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <header class="flex items-center justify-between text-xs text-slate-400">
+                <span class="font-semibold text-white">Prospecção</span>
+                <span class="rounded-full bg-slate-800 px-2 py-0.5">18</span>
+              </header>
+              <div class="space-y-3 text-xs">
+                <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                  <p class="font-semibold text-white">#4831 · AgroLuz Energia</p>
+                  <p class="text-slate-400">Valor previsto: R$ 32.000</p>
+                  <p class="text-[11px] text-emerald-300">Probabilidade: 20%</p>
+                  <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                    <span>Última atividade</span>
+                    <span>há 4h</span>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-dashed border-emerald-500/40 bg-emerald-500/5 p-3 text-emerald-200">
+                  Solte aqui novos leads qualificados
+                </div>
+              </div>
+            </article>
+            <article class="flex min-w-[220px] flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <header class="flex items-center justify-between text-xs text-slate-400">
+                <span class="font-semibold text-white">Qualificado</span>
+                <span class="rounded-full bg-slate-800 px-2 py-0.5">24</span>
+              </header>
+              <div class="space-y-3 text-xs">
+                <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                  <p class="font-semibold text-white">#4820 · BioVerde Sistemas</p>
+                  <p class="text-slate-400">Valor previsto: R$ 18.500</p>
+                  <p class="text-[11px] text-emerald-300">Probabilidade: 35%</p>
+                  <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                    <span>Próxima atividade</span>
+                    <span>amanhã</span>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                  <p class="font-semibold text-white">#4818 · Nubio Tech</p>
+                  <p class="text-slate-400">Valor previsto: R$ 12.000</p>
+                  <p class="text-[11px] text-emerald-300">Probabilidade: 38%</p>
+                  <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                    <span>SLA contato</span>
+                    <span class="text-amber-300">-15 min</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="flex min-w-[220px] flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <header class="flex items-center justify-between text-xs text-slate-400">
+                <span class="font-semibold text-white">Proposta</span>
+                <span class="rounded-full bg-slate-800 px-2 py-0.5">15</span>
+              </header>
+              <div class="space-y-3 text-xs">
+                <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                  <p class="font-semibold text-white">#4807 · Energia Forte</p>
+                  <p class="text-slate-400">Valor previsto: R$ 55.800</p>
+                  <p class="text-[11px] text-emerald-300">Probabilidade: 55%</p>
+                  <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                    <span>Reunião decisores</span>
+                    <span>14/02</span>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-3 ghost-card">
+                  <p class="font-semibold text-white">#4802 · AgroNord</p>
+                  <p class="text-slate-400">Valor previsto: R$ 41.200</p>
+                  <p class="text-[11px] text-emerald-300">Probabilidade: 48%</p>
+                </div>
+              </div>
+            </article>
+            <article class="flex min-w-[220px] flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <header class="flex items-center justify-between text-xs text-slate-400">
+                <span class="font-semibold text-white">Fechamento</span>
+                <span class="rounded-full bg-slate-800 px-2 py-0.5">5</span>
+              </header>
+              <div class="space-y-3 text-xs">
+                <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                  <p class="font-semibold text-white">#4799 · Solariza</p>
+                  <p class="text-slate-400">Valor previsto: R$ 33.400</p>
+                  <p class="text-[11px] text-emerald-300">Probabilidade: 72%</p>
+                  <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                    <span>Contrato enviado</span>
+                    <span>há 1d</span>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                  <p class="font-semibold text-white">#4797 · HidroNordeste</p>
+                  <p class="text-slate-400">Valor previsto: R$ 44.600</p>
+                  <p class="text-[11px] text-emerald-300">Probabilidade: 69%</p>
+                </div>
+              </div>
+            </article>
+            <article class="flex min-w-[220px] flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <header class="flex items-center justify-between text-xs text-slate-400">
+                <span class="font-semibold text-white">Ganhou / Perdido</span>
+                <span class="rounded-full bg-slate-800 px-2 py-0.5">12</span>
+              </header>
+              <div class="space-y-3 text-xs">
+                <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-emerald-200">
+                  <p class="font-semibold text-white">#4790 · EcoBrisa</p>
+                  <p class="text-[11px]">Fechado ganho · R$ 62.900</p>
+                </div>
+                <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-red-200">
+                  <p class="font-semibold text-white">#4785 · SolFlex</p>
+                  <p class="text-[11px]">Perdido · Motivo: Preço</p>
+                </div>
+              </div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script>
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        document.body.classList.toggle('bg-slate-100');
+        document.body.classList.toggle('text-slate-900');
+      });
+    </script>
+  </body>
+</html>

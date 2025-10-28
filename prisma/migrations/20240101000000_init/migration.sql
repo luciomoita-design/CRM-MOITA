@@ -1,0 +1,1 @@
+-- Prisma migration placeholder. Use `prisma migrate dev` to generate SQL based on schema.

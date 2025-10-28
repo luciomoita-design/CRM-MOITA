@@ -1,0 +1,162 @@
+openapi: 3.0.3
+info:
+  title: Moita CRM API
+  version: 0.1.0
+  description: API REST para recursos CRM do Moita CRM.
+servers:
+  - url: https://localhost:3000/api
+paths:
+  /{entity}:
+    get:
+      summary: Lista registros
+      parameters:
+        - name: entity
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: perPage
+          in: query
+          schema:
+            type: integer
+        - name: q
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista paginada
+    post:
+      summary: Cria registro
+      parameters:
+        - name: entity
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Criado
+  /{entity}/{id}:
+    get:
+      summary: Obtém registro
+      parameters:
+        - name: entity
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Registro
+    patch:
+      summary: Atualiza registro
+      parameters:
+        - $ref: '#/paths/~1{entity}~1{id}/get/parameters/0'
+        - $ref: '#/paths/~1{entity}~1{id}/get/parameters/1'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Atualizado
+    delete:
+      summary: Exclui registro
+      parameters:
+        - $ref: '#/paths/~1{entity}~1{id}/get/parameters/0'
+        - $ref: '#/paths/~1{entity}~1{id}/get/parameters/1'
+      responses:
+        '200':
+          description: Excluído
+  /leads/{id}/qualificar:
+    post:
+      summary: Qualifica lead
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lead qualificado
+  /deals/{id}/mover:
+    post:
+      summary: Move negócio de estágio
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stageId:
+                  type: string
+      responses:
+        '200':
+          description: Negócio atualizado
+  /activities/{id}/concluir:
+    post:
+      summary: Conclui atividade
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Atividade concluída
+  /webhooks/test:
+    post:
+      summary: Dispara webhook de teste
+      responses:
+        '200':
+          description: Disparo realizado
+  /scoring/recalculate:
+    post:
+      summary: Recalcula scoring
+      parameters:
+        - name: entity
+          in: query
+          schema:
+            type: string
+        - name: organizationId
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Processamento iniciado
+components:
+  securitySchemes:
+    session:
+      type: apiKey
+      in: cookie
+      name: next-auth.session-token
+security:
+  - session: []

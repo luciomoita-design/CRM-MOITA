@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard — Moita CRM Preview</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#ECFDF5',
+                100: '#D1FAE5',
+                500: '#10B981',
+                600: '#059669',
+                900: '#064E3B'
+              }
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <div class="flex min-h-screen">
+      <aside class="hidden w-64 flex-col border-r border-slate-800/80 bg-slate-950/80 p-6 lg:flex">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-500/20 text-brand-500">MC</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-100/80">Moita CRM</p>
+            <h1 class="text-base font-semibold text-white">Demo corporativo</h1>
+          </div>
+        </div>
+        <nav class="mt-8 flex flex-1 flex-col gap-1 text-sm">
+          <a class="flex items-center justify-between rounded-lg px-3 py-2 font-medium text-white ring-1 ring-inset ring-brand-500/40 bg-brand-500/10" href="dashboard.html">Dashboard</a>
+          <a class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="leads.html">Leads</a>
+          <a class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="pipeline.html">Pipelines</a>
+          <a class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="tarefas.html">Tarefas</a>
+          <a class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="calendar.html">Calendário</a>
+          <a class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="#">Relatórios</a>
+          <a class="mt-auto rounded-lg px-3 py-2 text-slate-300 hover:bg-slate-900/60" href="#">Configurações</a>
+        </nav>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-400">
+          <p class="font-semibold text-slate-200">LGPD OK</p>
+          <p>Consentimentos auditados, dados armazenados no Brasil.</p>
+        </div>
+      </aside>
+
+      <div class="flex flex-1 flex-col">
+        <header class="flex items-center justify-between border-b border-slate-800/80 bg-slate-950/80 px-6 py-4 backdrop-blur">
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Dashboard</p>
+            <h2 class="text-lg font-semibold text-white">Visão geral da operação</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="theme-toggle" class="rounded-full border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs font-medium text-slate-200 hover:border-brand-500/60 hover:text-white">
+              Alternar tema
+            </button>
+            <div class="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900 px-3 py-1.5 text-sm text-slate-200">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              <span>Equipe Norte - Fortaleza</span>
+            </div>
+          </div>
+        </header>
+
+        <main class="flex-1 space-y-8 bg-slate-950/60 px-6 py-8">
+          <section class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <article class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-brand-500/5">
+              <p class="text-xs uppercase tracking-[0.25em] text-brand-100/80">Receita prevista</p>
+              <h3 class="mt-3 text-3xl font-semibold text-white">R$ 482.300</h3>
+              <p class="mt-1 text-xs text-slate-400">+18% vs. mês anterior</p>
+              <div class="mt-4 h-2 rounded-full bg-slate-800">
+                <div class="h-2 w-3/4 rounded-full bg-brand-500"></div>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+              <p class="text-xs uppercase tracking-[0.25em] text-brand-100/80">Leads ativos</p>
+              <h3 class="mt-3 text-3xl font-semibold text-white">128</h3>
+              <p class="mt-1 text-xs text-slate-400">24 aguardando contato inicial</p>
+              <div class="mt-4 grid grid-cols-3 gap-3 text-xs text-slate-300">
+                <div>
+                  <p class="text-slate-500">Novos</p>
+                  <p class="text-lg font-semibold text-white">32</p>
+                </div>
+                <div>
+                  <p class="text-slate-500">Qualificados</p>
+                  <p class="text-lg font-semibold text-white">61</p>
+                </div>
+                <div>
+                  <p class="text-slate-500">Ganhou</p>
+                  <p class="text-lg font-semibold text-white">12</p>
+                </div>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+              <p class="text-xs uppercase tracking-[0.25em] text-brand-100/80">Atividades hoje</p>
+              <h3 class="mt-3 text-3xl font-semibold text-white">21</h3>
+              <p class="mt-1 text-xs text-slate-400">7 reuniões, 6 follow-ups, 8 ligações</p>
+              <div class="mt-4 space-y-2 text-xs text-slate-300">
+                <div class="flex items-center justify-between">
+                  <span>Ligações concluídas</span>
+                  <span class="rounded-full bg-slate-900 px-2 py-0.5 text-emerald-300">86%</span>
+                </div>
+                <div class="flex h-1.5 overflow-hidden rounded-full bg-slate-800">
+                  <span class="w-5/6 rounded-full bg-emerald-500"></span>
+                </div>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+              <p class="text-xs uppercase tracking-[0.25em] text-brand-100/80">SLA primeiro contato</p>
+              <h3 class="mt-3 text-3xl font-semibold text-white">92% dentro do alvo</h3>
+              <p class="mt-1 text-xs text-slate-400">Meta: 30 minutos · Última violação há 3 dias</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-emerald-300">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                <span>Monitoramento contínuo com BullMQ</span>
+              </div>
+            </article>
+          </section>
+
+          <section class="grid gap-6 lg:grid-cols-3">
+            <article class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 lg:col-span-2">
+              <header class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-semibold text-white">Pipeline atual</h3>
+                  <p class="text-xs text-slate-400">Pipeline "Enterprise" — Atualizado há 5 minutos</p>
+                </div>
+                <button class="rounded-lg border border-brand-500/40 bg-brand-500/10 px-3 py-1.5 text-xs font-medium text-brand-100 hover:bg-brand-500/20">Exportar CSV</button>
+              </header>
+              <div class="mt-4 grid gap-4 md:grid-cols-4 text-xs text-slate-300">
+                <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+                  <p class="font-semibold text-white">Prospecção</p>
+                  <p class="mt-1 text-slate-400">18 negócios · R$ 98.000</p>
+                </div>
+                <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+                  <p class="font-semibold text-white">Qualificado</p>
+                  <p class="mt-1 text-slate-400">24 negócios · R$ 132.000</p>
+                </div>
+                <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+                  <p class="font-semibold text-white">Proposta</p>
+                  <p class="mt-1 text-slate-400">15 negócios · R$ 152.300</p>
+                </div>
+                <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+                  <p class="font-semibold text-white">Fechamento</p>
+                  <p class="mt-1 text-slate-400">5 negócios · R$ 99.500</p>
+                </div>
+              </div>
+              <div class="mt-6 grid gap-3">
+                <div class="flex items-center justify-between text-xs text-slate-400">
+                  <span>Probabilidade média ponderada</span>
+                  <span class="font-semibold text-white">47%</span>
+                </div>
+                <div class="h-2 rounded-full bg-slate-800">
+                  <div class="h-2 w-[47%] rounded-full bg-brand-500"></div>
+                </div>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+              <h3 class="text-base font-semibold text-white">Atividades recentes</h3>
+              <ol class="mt-4 space-y-4 text-xs text-slate-300">
+                <li class="flex gap-3">
+                  <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-300">WP</span>
+                  <div>
+                    <p class="font-medium text-white">WhatsApp · Rafaela Lima</p>
+                    <p class="text-slate-400">"Enviei as condições comerciais atualizadas"</p>
+                    <span class="text-[11px] text-slate-500">há 12 minutos</span>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/10 text-sky-300">MT</span>
+                  <div>
+                    <p class="font-medium text-white">Reunião · AgroLuz Energia</p>
+                    <p class="text-slate-400">"Reunião de alinhamento técnico confirmada"</p>
+                    <span class="text-[11px] text-slate-500">há 35 minutos</span>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-amber-500/10 text-amber-300">EM</span>
+                  <div>
+                    <p class="font-medium text-white">E-mail · Lead #4821</p>
+                    <p class="text-slate-400">"Assinatura eletrônica enviada para aprovação"</p>
+                    <span class="text-[11px] text-slate-500">há 58 minutos</span>
+                  </div>
+                </li>
+              </ol>
+              <button class="mt-6 w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-xs font-medium text-slate-200 hover:border-brand-500/50 hover:text-white">
+                Ver todas as atividades
+              </button>
+            </article>
+          </section>
+
+          <section class="grid gap-6 lg:grid-cols-2">
+            <article class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+              <header class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-semibold text-white">Heatmap de atividades</h3>
+                  <p class="text-xs text-slate-400">Últimos 30 dias · horários em America/Fortaleza</p>
+                </div>
+                <select class="rounded-lg border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs text-slate-200">
+                  <option>Time comercial</option>
+                  <option>Customer success</option>
+                </select>
+              </header>
+              <div class="mt-5 grid grid-cols-8 gap-1 text-[10px] text-slate-500">
+                <div class="col-span-1 text-right text-slate-400">
+                  <p>Seg</p>
+                  <p>Ter</p>
+                  <p>Qua</p>
+                  <p>Qui</p>
+                  <p>Sex</p>
+                </div>
+                <div class="col-span-7 grid grid-cols-7 gap-1">
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/40"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/40"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/40"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/40"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/40"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/40"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/40"></span>
+                  <span class="h-6 w-6 rounded-md bg-slate-800/80"></span>
+                  <span class="h-6 w-6 rounded-md bg-emerald-500/20"></span>
+                </div>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+              <header class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-semibold text-white">Conversão por origem</h3>
+                  <p class="text-xs text-slate-400">Taxa de fechamento por origem de lead (90 dias)</p>
+                </div>
+                <select class="rounded-lg border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs text-slate-200">
+                  <option>Pipeline Enterprise</option>
+                  <option>Inside Sales</option>
+                </select>
+              </header>
+              <div class="mt-5 space-y-3 text-xs text-slate-300">
+                <div>
+                  <div class="flex justify-between text-slate-400">
+                    <span>Indicação</span>
+                    <span>34%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-slate-800">
+                    <div class="h-2 w-[68%] rounded-full bg-emerald-500"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-slate-400">
+                    <span>Orgânico</span>
+                    <span>28%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-slate-800">
+                    <div class="h-2 w-[56%] rounded-full bg-emerald-500/80"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-slate-400">
+                    <span>Eventos</span>
+                    <span>19%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-slate-800">
+                    <div class="h-2 w-[38%] rounded-full bg-emerald-500/60"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-slate-400">
+                    <span>Ads</span>
+                    <span>14%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-slate-800">
+                    <div class="h-2 w-[28%] rounded-full bg-emerald-500/40"></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script>
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        document.body.classList.toggle('bg-slate-100');
+        document.body.classList.toggle('text-slate-900');
+      });
+    </script>
+  </body>
+</html>
