@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2020"
+    ],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
@@ -14,15 +18,44 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/app/*": ["app/*"],
-      "@/components/*": ["components/*"],
-      "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"],
-      "@/tests/*": ["tests/*"],
-      "@/server/*": ["server/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/app/*": [
+        "app/*"
+      ],
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/tests/*": [
+        "tests/*"
+      ],
+      "@/server/*": [
+        "server/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
+      ],
+      "@/types/*": [
+        "types/*"
+      ]
     },
-    "types": ["node", "next", "next/types/global", "next/image-types", "vitest/globals"]
+    "types": [
+      "node",
+      "next",
+      "next/types/global",
+      "next/image-types/global",
+      "vitest/globals"
+    ],
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
@@ -31,7 +64,10 @@
     "**/*.cjs",
     "**/*.mjs",
     "**/*.cts",
-    "**/*.mts"
+    "**/*.mts",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

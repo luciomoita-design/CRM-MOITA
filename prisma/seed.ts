@@ -226,6 +226,42 @@ async function main() {
     skipDuplicates: true
   });
 
+  // Usuário "sistema" usado como actingUserId dos ServiceTokens do agente de prospecção IA
+  await prisma.user.upsert({
+    where: { email: 'automacao-ia@moita.crm' },
+    update: {},
+    create: {
+      id: 'user-automacao-ia',
+      nome: 'Automação IA',
+      email: 'automacao-ia@moita.crm',
+      role: Role.rep,
+      ativo: true
+    }
+  });
+
+  // Planos provisórios para a IA apresentar na prospecção — ajustar valores/descrição reais depois
+  await prisma.pricingPlan.createMany({
+    data: [
+      {
+        id: 'plano-essencial',
+        organizationId: organization.id,
+        nome: 'Plano Essencial',
+        precoBRL: 29.9,
+        descricao: 'Plano de entrada (valor provisório, a confirmar)',
+        ativo: true
+      },
+      {
+        id: 'plano-pro',
+        organizationId: organization.id,
+        nome: 'Plano Pro',
+        precoBRL: 100,
+        descricao: 'Plano completo (valor provisório, a confirmar)',
+        ativo: true
+      }
+    ],
+    skipDuplicates: true
+  });
+
   console.log('Seed concluído');
 }
 

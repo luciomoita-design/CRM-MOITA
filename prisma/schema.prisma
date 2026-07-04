@@ -42,6 +42,29 @@ enum SLAAlvo {
   mover_estagio
 }
 
+enum MessageDirection {
+  inbound
+  outbound
+}
+
+enum MessageAutor {
+  ia
+  humano
+  cliente
+}
+
+enum ConversationStatus {
+  ativa
+  escalada
+  encerrada
+}
+
+enum EscalationStatus {
+  pendente
+  respondida
+  ignorada
+}
+
 model User {
   id         String   @id @default(cuid())
   nome       String
@@ -59,6 +82,11 @@ model User {
   notes        Note[]          @relation("NoteAuthor")
   files        File[]          @relation("FileAuthor")
   auditLogs    AuditLog[]      @relation("AuditActor")
+  serviceTokensAsActor  ServiceToken[]     @relation("ServiceTokenActingUser")
+  serviceTokensCreated  ServiceToken[]     @relation("ServiceTokenCreatedBy")
+  leadImportBatches     LeadImportBatch[]
+  escalationsRespondidas Escalation[] @relation("EscalationRespondidoPor")
+  calendarEvents        CalendarEvent[] @relation("CalendarEventOwner")
 }
 
 model Organization {
@@ -79,6 +107,11 @@ model Organization {
   webhooks      Webhook[]
   scoringRules  ScoringRule[]
   slaConfigs    SLAConfig[]
+  pricingPlans      PricingPlan[]
+  serviceTokens     ServiceToken[]
+  conversations     Conversation[]
+  escalations       Escalation[]
+  leadImportBatches LeadImportBatch[]
 }
 
 model Membership {
@@ -99,6 +132,7 @@ model Pipeline {
   descricao      String?
   ordem          Int
   stages         Stage[]
+  deals          Deal[]
   organization   Organization @relation(fields: [organizationId], references: [id])
 }
 
@@ -126,15 +160,26 @@ model Lead {
   consentimentoContato Boolean  @default(true)
   doNotContact         Boolean  @default(false)
   createdAt            DateTime @default(now())
+  instagram            String?
+  semAcompanhamento    Boolean  @default(false)
+  inativo              Boolean  @default(false)
+  prospeccaoFlags      Json?
+  ultimaProspeccaoEm   DateTime?
+  importBatchId        String?
   organization         Organization @relation(fields: [organizationId], references: [id])
   owner                User?    @relation("LeadOwner", fields: [ownerId], references: [id])
+  importBatch          LeadImportBatch? @relation(fields: [importBatchId], references: [id])
   deals                Deal[]
   activities           Activity[]
   notes                Note[]
   files                File[]
-  customValues         CustomFieldValue[]
+  calendarEvents       CalendarEvent[] @relation("CalendarEventRelatedLead")
+  conversations        Conversation[]
+  escalations          Escalation[]
 
   @@index([organizationId])
+  @@index([organizationId, semAcompanhamento])
+  @@index([organizationId, inativo])
 }
 
 model Deal {
@@ -154,7 +199,7 @@ model Deal {
   activities             Activity[]
   notes                  Note[]
   files                  File[]
-  customValues           CustomFieldValue[]
+  calendarEvents         CalendarEvent[] @relation("CalendarEventRelatedDeal")
 
   @@index([pipelineId])
 }
@@ -189,9 +234,9 @@ model CalendarEvent {
   relatedLeadId   String?
   relatedDealId   String?
   organization    Organization @relation(fields: [organizationId], references: [id])
-  owner           User          @relation(fields: [ownerId], references: [id])
-  relatedLead     Lead?         @relation(fields: [relatedLeadId], references: [id])
-  relatedDeal     Deal?         @relation(fields: [relatedDealId], references: [id])
+  owner           User          @relation("CalendarEventOwner", fields: [ownerId], references: [id])
+  relatedLead     Lead?         @relation("CalendarEventRelatedLead", fields: [relatedLeadId], references: [id])
+  relatedDeal     Deal?         @relation("CalendarEventRelatedDeal", fields: [relatedDealId], references: [id])
 }
 
 model CustomFieldDefinition {
@@ -288,4 +333,102 @@ model SLAConfig {
   prazoMinutos   Int
   ativo          Boolean @default(true)
   organization   Organization @relation(fields: [organizationId], references: [id])
+}
+
+model PricingPlan {
+  id             String   @id @default(cuid())
+  organizationId String
+  nome           String
+  precoBRL       Float
+  descricao      String?
+  ativo          Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id])
+}
+
+model ServiceToken {
+  id             String    @id @default(cuid())
+  organizationId String
+  nome           String
+  tokenPrefix    String    @unique
+  tokenHash      String
+  escopos        String[]  @default(["prospecting"])
+  actingUserId   String
+  ativo          Boolean   @default(true)
+  ultimoUsoEm    DateTime?
+  expiraEm       DateTime?
+  criadoPorId    String
+  createdAt      DateTime  @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  actingUser     User      @relation("ServiceTokenActingUser", fields: [actingUserId], references: [id])
+  criadoPor      User      @relation("ServiceTokenCreatedBy", fields: [criadoPorId], references: [id])
+}
+
+model Conversation {
+  id             String   @id @default(cuid())
+  organizationId String
+  leadId         String
+  canal          String   @default("whatsapp")
+  status         ConversationStatus @default(ativa)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  lead           Lead     @relation(fields: [leadId], references: [id])
+  messages       Message[]
+  escalations    Escalation[]
+
+  @@index([organizationId, leadId])
+}
+
+model Message {
+  id             String   @id @default(cuid())
+  conversationId String
+  leadId         String
+  direction      MessageDirection
+  autor          MessageAutor
+  content        String
+  canal          String   @default("whatsapp")
+  externalId     String?
+  createdAt      DateTime @default(now())
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+
+  @@index([conversationId])
+  @@index([leadId])
+}
+
+model Escalation {
+  id                      String   @id @default(cuid())
+  organizationId          String
+  leadId                  String
+  conversationId          String?
+  motivo                  String
+  mensagemClienteContexto String?
+  urgente                 Boolean  @default(false)
+  status                  EscalationStatus @default(pendente)
+  respostaHumana          String?
+  respondidoPorId         String?
+  respondidoEm            DateTime?
+  createdAt               DateTime @default(now())
+  organization            Organization @relation(fields: [organizationId], references: [id])
+  lead                    Lead     @relation(fields: [leadId], references: [id])
+  conversation            Conversation? @relation(fields: [conversationId], references: [id])
+  respondidoPor           User?    @relation("EscalationRespondidoPor", fields: [respondidoPorId], references: [id])
+
+  @@index([organizationId, status])
+}
+
+model LeadImportBatch {
+  id                  String   @id @default(cuid())
+  organizationId      String
+  arquivoNome         String
+  colunasMapeamento   Json
+  totalLinhas         Int
+  totalAtualizados     Int
+  totalNaoEncontrados Int
+  erros_json          Json?
+  importadoPorId      String
+  createdAt           DateTime @default(now())
+  organization        Organization @relation(fields: [organizationId], references: [id])
+  importadoPor        User     @relation(fields: [importadoPorId], references: [id])
+  leads               Lead[]
 }

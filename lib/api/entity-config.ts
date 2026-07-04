@@ -210,6 +210,65 @@ export const entityConfigs = {
       ativo: z.boolean().default(true)
     }),
     searchable: ['nome']
+  },
+  pricingPlans: {
+    model: 'pricingPlan',
+    schema: z.object({
+      organizationId: z.string(),
+      nome: z.string(),
+      precoBRL: z.number().min(0),
+      descricao: z.string().optional(),
+      ativo: z.boolean().default(true)
+    }),
+    searchable: ['nome']
+  },
+  leadImportBatches: {
+    model: 'leadImportBatch',
+    schema: z.object({
+      organizationId: z.string(),
+      arquivoNome: z.string(),
+      colunasMapeamento: z.any(),
+      totalLinhas: z.number().int(),
+      totalAtualizados: z.number().int(),
+      totalNaoEncontrados: z.number().int(),
+      erros_json: z.any().optional(),
+      importadoPorId: z.string()
+    }),
+    searchable: ['arquivoNome']
+  },
+  escalations: {
+    model: 'escalation',
+    schema: z.object({
+      organizationId: z.string(),
+      leadId: z.string(),
+      conversationId: z.string().optional(),
+      motivo: z.string(),
+      mensagemClienteContexto: z.string().optional(),
+      urgente: z.boolean().default(false)
+    }),
+    searchable: ['motivo']
+  },
+  conversations: {
+    model: 'conversation',
+    schema: z.object({
+      organizationId: z.string(),
+      leadId: z.string(),
+      canal: z.string().default('whatsapp')
+    }),
+    searchable: []
+  },
+  messages: {
+    model: 'message',
+    schema: z.object({
+      conversationId: z.string(),
+      leadId: z.string(),
+      direction: z.enum(['inbound', 'outbound']),
+      autor: z.enum(['ia', 'humano', 'cliente']),
+      content: z.string(),
+      canal: z.string().default('whatsapp'),
+      externalId: z.string().optional()
+    }),
+    searchable: ['content']
   }
 } as const satisfies Record<string, EntityConfig>;
 
