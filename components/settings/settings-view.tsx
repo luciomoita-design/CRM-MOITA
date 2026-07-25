@@ -20,6 +20,11 @@ export function SettingsView() {
             </Link>
           </li>
           <li>
+            <Link href="/dashboard/integracoes" className="text-brand hover:underline">
+              Integrações
+            </Link>
+          </li>
+          <li>
             <Link href="/dashboard/configuracoes/webhooks" className="text-brand hover:underline">
               Webhooks
             </Link>
