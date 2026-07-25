@@ -10,7 +10,8 @@ import {
   Calendar,
   ListChecks,
   Cog,
-  BarChart3
+  BarChart3,
+  Blocks,
 } from 'lucide-react';
 
 const items = [
@@ -20,7 +21,8 @@ const items = [
   { href: '/dashboard/tarefas', label: 'Tarefas', icon: ListChecks },
   { href: '/dashboard/calendario', label: 'Calendário', icon: Calendar },
   { href: '/dashboard/relatorios', label: 'Relatórios', icon: BarChart3 },
-  { href: '/dashboard/configuracoes', label: 'Configurações', icon: Cog }
+  { href: '/dashboard/integracoes', label: 'Integrações', icon: Blocks },
+  { href: '/dashboard/configuracoes', label: 'Configurações', icon: Cog },
 ];
 
 export const Sidebar = () => {
@@ -45,7 +47,7 @@ export const Sidebar = () => {
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
                 active
                   ? 'bg-brand/10 text-brand shadow-sm'
-                  : 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800'
+                  : 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800',
               )}
             >
               <Icon className="h-4 w-4" /> {item.label}
@@ -55,7 +57,8 @@ export const Sidebar = () => {
       </nav>
       <div className="mt-auto rounded-lg bg-slate-100 p-4 text-xs text-slate-600 dark:bg-slate-800/60 dark:text-slate-300">
         <p>
-          Dados sensíveis são tratados conforme a <strong>LGPD</strong>. Consulte a auditoria em Configurações → Segurança.
+          Dados sensíveis são tratados conforme a <strong>LGPD</strong>. Consulte a auditoria em
+          Configurações → Segurança.
         </p>
       </div>
     </aside>
