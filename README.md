@@ -23,6 +23,7 @@ lib/                      # Utilidades e configuração de API
 server/                   # Serviços de domínio, Prisma e autenticação
 prisma/                   # Schema, migração inicial e seed
 infra/                    # Configuração do OpenTelemetry collector
+ios/                      # Projeto iOS nativo (SwiftUI + Clean Architecture)
 ```
 
 ## Requisitos
@@ -39,6 +40,56 @@ Copie `.env.example` para `.env` e ajuste conforme necessário.
 ```
 cp .env.example .env
 ```
+
+## Aplicativo iOS nativo (Moita CRM)
+
+O diretório `ios/` contém um aplicativo nativo SwiftUI para iOS 17+ construído com Swift 5.9, Combine e SwiftData seguindo Clean Architecture + MVVM.
+
+### Pré-requisitos
+
+- Xcode 15 ou superior (iOS 17 SDK)
+- Swift 5.9+
+
+### Estrutura iOS
+
+```
+ios/MoitaCRM.xcodeproj            # Projeto Xcode com targets App, Widgets, Intents e Testes
+ios/MoitaCRM/App                  # Bootstrapping, roteamento e dependências
+ios/MoitaCRM/Domain               # Modelos SwiftData, protocolos e serviços de domínio
+ios/MoitaCRM/Data                 # Implementações de repositórios, rede, persistência e seeds
+ios/MoitaCRM/Features             # Módulos: Auth, Leads, Pipelines, Deals, Activities, Calendar, CustomFields, Scoring, SLA, Reports, Settings
+ios/MoitaCRM/Shared               # Componentes reutilizáveis, utilidades e extensões
+ios/MoitaCRM/Resources            # Assets, Mock server JSON e arquivos de configuração
+ios/MoitaCRMTests                 # Testes unitários (ScoringService, SLAService, SyncService)
+ios/MoitaCRMUITests               # Testes UI básicos (login → lead → pipeline)
+ios/MoitaCRMWidgets               # WidgetKit com tarefas e deals da semana
+ios/MoitaCRMIntents               # App Intents/Siri Shortcuts para criação rápida
+```
+
+### Configuração e execução
+
+1. Abra `ios/MoitaCRM.xcodeproj` no Xcode 15+.
+2. Selecione o esquema **MoitaCRM** e rode em um simulador iOS 17 ou dispositivo.
+3. O seed automático cria pipeline, usuários, leads, deals, regras de scoring e SLA demo na primeira execução.
+4. Para alternar entre API mock e remota, utilize o toggle em **Configurações → Rede**.
+
+### Funcionalidades principais do app
+
+- Navegação TabView: Pipelines, Leads, Tarefas, Calendário, Relatórios e Configurações.
+- Pipelines Kanban com arrastar/soltar (haptics) e cálculo de valor previsto por estágio.
+- Leads com busca, filtros persistentes, tabs de dados, atividades, campos personalizados, notas e arquivos (placeholder).
+- Deals com criação rápida a partir do lead e edição simplificada.
+- Inbox de tarefas (Hoje/Próximos 7 dias/Atrasadas) com swipe para concluir e agendamento de notificações locais.
+- Calendário com visões mês/semana/dia e vínculo com leads/deals.
+- Builder de campos personalizados, Lead Scoring com recálculo manual/automático, monitor de SLA e alertas.
+- Relatórios com conversão por estágio, tempo médio, origem e heatmap de atividades usando agregações SwiftData.
+- Exportação CSV/JSON, App Intents (Siri), Widgets, seeds demo e armazenamento seguro de tokens no Keychain.
+
+### Build de Release
+
+1. No Xcode, selecione o esquema **MoitaCRM**.
+2. Menu **Product → Archive** para gerar um build assinado.
+3. Utilize o Organizer para distribuir (TestFlight/App Store) ou exportar IPA.
 
 Variáveis principais:
 

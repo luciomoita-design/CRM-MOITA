@@ -1,0 +1,203 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 60;
+	objects = {
+		/* Begin PBXBuildFile section */
+		0098807DB9684F07BBED1BDA /* ReportsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE211B8CEC1F4981AA0F6A37 /* ReportsDashboardView.swift */; };
+		020E36F15104413F920C57C9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5FAA908DF49E6BE7F3E84 /* APIClient.swift */; };
+		03671F9FC0AF47EDADD986D7 /* PipelineBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B64480C1E442EA04A67D9 /* PipelineBoardViewModel.swift */; };
+		03CE50105FD04AE4A375C413 /* MoitaCRMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7103EC57D3A2486DAA6F7D98 /* MoitaCRMUITests.swift */; };
+		092AC97C6A154195BD62BBE8 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553426C5E23449BA910713A /* CalendarViewModel.swift */; };
+		15FD0F3969414761A714E573 /* ReportsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D65628F444D6FAA7EA480 /* ReportsViewModel.swift */; };
+		193200B36047426390C14C08 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C463E182F174A47A6455E26 /* Repositories.swift */; };
+		1CD90E72C8F441AB8D596303 /* LeadListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5033A892BB4AEE8355A8D1 /* LeadListViewModel.swift */; };
+		2009A7C30C3B4B9BBB5E6936 /* InMemorySyncQueueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99DD5DC146F4D18A4487565 /* InMemorySyncQueueRepository.swift */; };
+		23C755DE22C344A8A40F7EEC /* CustomFieldsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC51FE2A9A414877A77A94AA /* CustomFieldsViewModel.swift */; };
+		264AD7D8EA2841B6803BEACC /* String+Masks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70FE5E19EA842BAAA6C97F9 /* String+Masks.swift */; };
+		26A9F4C15A0E4086BC8251F2 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD2FE304441F18FEBD0A6 /* MainTabView.swift */; };
+		281AE940A8D0475DB15229B2 /* DealQuickEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B354F6F6F764FB5B7E1D9E5 /* DealQuickEditorView.swift */; };
+		2895B1FC1AB64439A093175C /* CustomFieldsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7513686CD14D14B86BBFDF /* CustomFieldsDetailView.swift */; };
+		2ABE2ADE82094AF49E9D4696 /* ScoringServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0FBC6031A455796B5CBA8 /* ScoringServiceTests.swift */; };
+		2AC894D4B9DD4034AAE4E1A1 /* SupportRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B076F484F04D35BA08782B /* SupportRepositories.swift */; };
+		2BEDD2EA3DFA4C3A9C16FA2D /* QuickCreateIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECF13A854744428FA075A4 /* QuickCreateIntent.swift */; };
+		2D3D91ADEE9F4055B3B569CC /* leads.json in Resources */ = {isa = PBXBuildFile; fileRef = FF760578CDBF41AA922B546A /* leads.json */; };
+		35228453710546B2870878AC /* LeadDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54948CF222D64CB08501B960 /* LeadDetailView.swift */; };
+		37D158FFA652429E8032D4C5 /* QuickAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC435D29B3400BBD850AEA /* QuickAddButton.swift */; };
+		3CEB326C32A84126B50348CC /* TasksInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0D8861DBE498095341BF8 /* TasksInboxView.swift */; };
+		43752EE3B9A14D6CAC1300B0 /* SLAServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCFBC26D0AC4DF7AD87EF1E /* SLAServiceTests.swift */; };
+		446360202D6747CEB11EB051 /* CustomFieldsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AEA915C724C31A8044534 /* CustomFieldsSettingsView.swift */; };
+		44C6B68E908A498BA2308996 /* SLAMonitorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60032D442E340D28BCE5E56 /* SLAMonitorViewModel.swift */; };
+		4701FFA5F94C48CC83A3244E /* PipelineBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1CBE5EC4AB4027A39E2672 /* PipelineBoardView.swift */; };
+		4E4FB33BCC64407D856CCBBA /* DemoDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CD4D82780643DAB000DE0A /* DemoDataSeeder.swift */; };
+		58CD466460A1453DA3641071 /* ScoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C8562F6E943CFB6B113ED /* ScoringService.swift */; };
+		5A5A07B88E4E4563968E9186 /* RemoteToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A6492F9F14CD9AE79ED11 /* RemoteToggle.swift */; };
+		5B43424AE92E46848B71DE7C /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C41FDFCBD449785EA87A4 /* KeychainStorage.swift */; };
+		5DF3585F016A4F27A9B0329A /* ScoringDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBA0637B41141B9AEAAD52C /* ScoringDashboardView.swift */; };
+		68DBAF5E5E604E6DBF431D4E /* LeadListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE93F38A644D109AE8BB69 /* LeadListView.swift */; };
+		697CA6CE2B0C464DB2EF6E20 /* MoitaCRMWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1F3F58CBFE42D69DED678A /* MoitaCRMWidget.swift */; };
+		72753298299E4D6FA9957F26 /* ScoringDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B677F98994BF46A58B37A1A6 /* ScoringDashboardViewModel.swift */; };
+		74E6226A6856410CA764A066 /* SyncServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369CB9C2E1E45E48665EA24 /* SyncServiceTests.swift */; };
+		74F3DE518AAC458CA7EFDB79 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 50157342C75E4F0E8B42E4D8 /* Contents.json */; };
+		778312DC879240458BB66537 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A00D3BC404B16AEEFAE82 /* AuthView.swift */; };
+		7AE875621CC04963B09D7D94 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F808E392CCF4F2583CB2BAB /* DependencyContainer.swift */; };
+		8441DEFCF40B4AD1AF0FC8ED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 378359C628FA42DDB05B1950 /* Info.plist */; };
+		8526F6385033411A868B0763 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AFFAEA50DB4CEDBE97E058 /* AuthViewModel.swift */; };
+		88D43A4E49DA4C09B25518C1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAFE68C70E334C42986039EC /* Info.plist */; };
+		8D183FC8F9314756B35F743E /* SLAMonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D76B67B0B46039F11A870 /* SLAMonitorView.swift */; };
+		94BED2810B914A8F9A749F63 /* LeadExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6C8433E2E44DA49CE61AE6 /* LeadExporter.swift */; };
+		97A9C87F630D49B7968DBFFD /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = E88E34BBBD4D468286FDF423 /* Contents.json */; };
+		9A9799B1E5804782AD578733 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C91166EE6241BD97792E52 /* SettingsView.swift */; };
+		9B76C866A800442DA4A7B02F /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27A8DE96344D279169A583 /* IntentHandler.swift */; };
+		C12979D585D642249BE7D92E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B0C2BD9804F5BADD7CB1D /* PersistenceController.swift */; };
+		CBFF49A74F7941AFBFBD6170 /* TasksInboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0CD9F776E4A8A993DFABA /* TasksInboxViewModel.swift */; };
+		D538B80E363143328AE49D49 /* MoitaCRMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425D3A7E662F4C56A2F1D19D /* MoitaCRMApp.swift */; };
+		D7708A3616EC4A0892957275 /* SLAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844A267ACDE4A37B8BF9566 /* SLAService.swift */; };
+		D806DDFC30DE48668BD8910A /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8B603B305CF421784C78A8D /* Environment.plist */; };
+		DF563BD3B3404DDFB921DD37 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3420F7AF99419BAC933DC5 /* Entities.swift */; };
+		DFA0B63FDBC248F2B4D9BC53 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6970E1096456478486AE9B6E /* AppRouter.swift */; };
+		E97E84EE678843A4BDC67E87 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A79C394E544A95A5431732 /* SyncService.swift */; };
+		ED9A6C1AE43B44CA8F0442B6 /* SwiftDataRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A3D36138F47BFAB2EC63A /* SwiftDataRepositories.swift */; };
+		F51C89F9C7C443ED85D48A84 /* CalendarDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622AAAF797684E599AC11F88 /* CalendarDashboardView.swift */; };
+		FB2264FC3C214E969F4EB700 /* pipelines.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFBF8AF27B40BEB9163F37 /* pipelines.json */; };
+		/* End PBXBuildFile section */
+
+		/* Begin PBXFileReference section */
+		6970E1096456478486AE9B6E /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/App/AppRouter.swift"; sourceTree = SOURCE_ROOT; };
+		2F808E392CCF4F2583CB2BAB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/App/DependencyContainer.swift"; sourceTree = SOURCE_ROOT; };
+		DD4CC49B7A404F1F9D938A2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoitaCRM/App/Info.plist"; sourceTree = SOURCE_ROOT; };
+		CB5BD2FE304441F18FEBD0A6 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/App/MainTabView.swift"; sourceTree = SOURCE_ROOT; };
+		425D3A7E662F4C56A2F1D19D /* MoitaCRMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/App/MoitaCRMApp.swift"; sourceTree = SOURCE_ROOT; };
+		E8B603B305CF421784C78A8D /* Environment.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoitaCRM/Config/Environment.plist"; sourceTree = SOURCE_ROOT; };
+		9FC5FAA908DF49E6BE7F3E84 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Data/Network/APIClient.swift"; sourceTree = SOURCE_ROOT; };
+		325A6492F9F14CD9AE79ED11 /* RemoteToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Data/Network/RemoteToggle.swift"; sourceTree = SOURCE_ROOT; };
+		F45C41FDFCBD449785EA87A4 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Data/Persistence/KeychainStorage.swift"; sourceTree = SOURCE_ROOT; };
+		3D3B0C2BD9804F5BADD7CB1D /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Data/Persistence/PersistenceController.swift"; sourceTree = SOURCE_ROOT; };
+		71B076F484F04D35BA08782B /* SupportRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Data/Repositories/SupportRepositories.swift"; sourceTree = SOURCE_ROOT; };
+		FF5A3D36138F47BFAB2EC63A /* SwiftDataRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Data/Repositories/SwiftDataRepositories.swift"; sourceTree = SOURCE_ROOT; };
+		28CD4D82780643DAB000DE0A /* DemoDataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Data/Seeds/DemoDataSeeder.swift"; sourceTree = SOURCE_ROOT; };
+		A99DD5DC146F4D18A4487565 /* InMemorySyncQueueRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Data/Sync/InMemorySyncQueueRepository.swift"; sourceTree = SOURCE_ROOT; };
+		2D3420F7AF99419BAC933DC5 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Domain/Models/Entities.swift"; sourceTree = SOURCE_ROOT; };
+		5C463E182F174A47A6455E26 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Domain/Repositories/Repositories.swift"; sourceTree = SOURCE_ROOT; };
+		0844A267ACDE4A37B8BF9566 /* SLAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Domain/Services/SLAService.swift"; sourceTree = SOURCE_ROOT; };
+		E22C8562F6E943CFB6B113ED /* ScoringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Domain/Services/ScoringService.swift"; sourceTree = SOURCE_ROOT; };
+		58A79C394E544A95A5431732 /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Domain/Services/SyncService.swift"; sourceTree = SOURCE_ROOT; };
+		ADA0D8861DBE498095341BF8 /* TasksInboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Activities/TasksInboxView.swift"; sourceTree = SOURCE_ROOT; };
+		19E0CD9F776E4A8A993DFABA /* TasksInboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Activities/TasksInboxViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		225A00D3BC404B16AEEFAE82 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Auth/AuthView.swift"; sourceTree = SOURCE_ROOT; };
+		B4AFFAEA50DB4CEDBE97E058 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Auth/AuthViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		622AAAF797684E599AC11F88 /* CalendarDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Calendar/CalendarDashboardView.swift"; sourceTree = SOURCE_ROOT; };
+		9553426C5E23449BA910713A /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Calendar/CalendarViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		8E7513686CD14D14B86BBFDF /* CustomFieldsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/CustomFields/CustomFieldsDetailView.swift"; sourceTree = SOURCE_ROOT; };
+		FC51FE2A9A414877A77A94AA /* CustomFieldsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/CustomFields/CustomFieldsViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		8B354F6F6F764FB5B7E1D9E5 /* DealQuickEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Deals/DealQuickEditorView.swift"; sourceTree = SOURCE_ROOT; };
+		54948CF222D64CB08501B960 /* LeadDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Leads/LeadDetailView.swift"; sourceTree = SOURCE_ROOT; };
+		4ADE93F38A644D109AE8BB69 /* LeadListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Leads/LeadListView.swift"; sourceTree = SOURCE_ROOT; };
+		BB5033A892BB4AEE8355A8D1 /* LeadListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Leads/LeadListViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		BB1CBE5EC4AB4027A39E2672 /* PipelineBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Pipelines/PipelineBoardView.swift"; sourceTree = SOURCE_ROOT; };
+		B08B64480C1E442EA04A67D9 /* PipelineBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Pipelines/PipelineBoardViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		CE211B8CEC1F4981AA0F6A37 /* ReportsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Reports/ReportsDashboardView.swift"; sourceTree = SOURCE_ROOT; };
+		367D65628F444D6FAA7EA480 /* ReportsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Reports/ReportsViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		067D76B67B0B46039F11A870 /* SLAMonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/SLA/SLAMonitorView.swift"; sourceTree = SOURCE_ROOT; };
+		D60032D442E340D28BCE5E56 /* SLAMonitorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/SLA/SLAMonitorViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		5DBA0637B41141B9AEAAD52C /* ScoringDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Scoring/ScoringDashboardView.swift"; sourceTree = SOURCE_ROOT; };
+		B677F98994BF46A58B37A1A6 /* ScoringDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Scoring/ScoringDashboardViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		DA2AEA915C724C31A8044534 /* CustomFieldsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Settings/CustomFieldsSettingsView.swift"; sourceTree = SOURCE_ROOT; };
+		22C91166EE6241BD97792E52 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Features/Settings/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
+		D4748BE2010546C78288627A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "MoitaCRM/Resources/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		50157342C75E4F0E8B42E4D8 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "MoitaCRM/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json"; sourceTree = SOURCE_ROOT; };
+		E88E34BBBD4D468286FDF423 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "MoitaCRM/Resources/Assets.xcassets/Contents.json"; sourceTree = SOURCE_ROOT; };
+		FF760578CDBF41AA922B546A /* leads.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "MoitaCRM/Resources/MockServer/leads.json"; sourceTree = SOURCE_ROOT; };
+		9FEFBF8AF27B40BEB9163F37 /* pipelines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "MoitaCRM/Resources/MockServer/pipelines.json"; sourceTree = SOURCE_ROOT; };
+		23CC435D29B3400BBD850AEA /* QuickAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Shared/Components/QuickAddButton.swift"; sourceTree = SOURCE_ROOT; };
+		C70FE5E19EA842BAAA6C97F9 /* String+Masks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Shared/Extensions/String+Masks.swift"; sourceTree = SOURCE_ROOT; };
+		1D6C8433E2E44DA49CE61AE6 /* LeadExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRM/Shared/Utilities/LeadExporter.swift"; sourceTree = SOURCE_ROOT; };
+		378359C628FA42DDB05B1950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoitaCRMIntents/Info.plist"; sourceTree = SOURCE_ROOT; };
+		6E27A8DE96344D279169A583 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRMIntents/IntentHandler.swift"; sourceTree = SOURCE_ROOT; };
+		E1ECF13A854744428FA075A4 /* QuickCreateIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRMIntents/QuickCreateIntent.swift"; sourceTree = SOURCE_ROOT; };
+		A474E277C0E04C80960CBCE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoitaCRMTests/Info.plist"; sourceTree = SOURCE_ROOT; };
+		0BCFBC26D0AC4DF7AD87EF1E /* SLAServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRMTests/SLAServiceTests.swift"; sourceTree = SOURCE_ROOT; };
+		89E0FBC6031A455796B5CBA8 /* ScoringServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRMTests/ScoringServiceTests.swift"; sourceTree = SOURCE_ROOT; };
+		C369CB9C2E1E45E48665EA24 /* SyncServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRMTests/SyncServiceTests.swift"; sourceTree = SOURCE_ROOT; };
+		4C3B990789024D78B72F0277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoitaCRMUITests/Info.plist"; sourceTree = SOURCE_ROOT; };
+		7103EC57D3A2486DAA6F7D98 /* MoitaCRMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRMUITests/MoitaCRMUITests.swift"; sourceTree = SOURCE_ROOT; };
+		BAFE68C70E334C42986039EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoitaCRMWidgets/Info.plist"; sourceTree = SOURCE_ROOT; };
+		AF1F3F58CBFE42D69DED678A /* MoitaCRMWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoitaCRMWidgets/MoitaCRMWidget.swift"; sourceTree = SOURCE_ROOT; };
+		E591EB71DF894A2A89AAE8A2 /* MoitaCRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = MoitaCRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75026472C29B413BA9A0DA28 /* MoitaCRMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MoitaCRMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBBB66A35F644ED5B482D3DE /* MoitaCRMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MoitaCRMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAF8F5F2CAE643218DD4D7E4 /* MoitaCRMWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; path = MoitaCRMWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E4CE6D1BF604E6CB99F6B72 /* MoitaCRMIntents.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; path = MoitaCRMIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		/* End PBXFileReference section */
+
+		/* Begin PBXFrameworksBuildPhase section */
+		BD1DAACFA3594C11A842EE24 /* PBXFrameworksBuildPhase */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		6CB1A53E1F6546D3BCDE7D91 /* PBXFrameworksBuildPhase */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		EFA1A3625EAA4E7B84AC2140 /* PBXFrameworksBuildPhase */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		096A75F89A514DD99DC9D444 /* PBXFrameworksBuildPhase */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		61F09DEC67454DE7B0B44239 /* PBXFrameworksBuildPhase */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		/* End PBXFrameworksBuildPhase section */
+
+		/* Begin PBXGroup section */
+		5626274945C4484A9DB7CD09 /* Main Group */ = {isa = PBXGroup; children = (CE5E550EB4284A85843B2EC7, AE6B30BA59B94A0D940A06A2, E09889C162D44325BE72F2A0, 0A50373ECC854C618B0E4180, C48434AC5E714A1EBBE0EEE3, 8622D113F8894B1CAC55539F); sourceTree = '<group>'; };
+                CE5E550EB4284A85843B2EC7 /* MoitaCRM */ = {isa = PBXGroup; children = (CB5BD2FE304441F18FEBD0A6, 2F808E392CCF4F2583CB2BAB, 6970E1096456478486AE9B6E, 425D3A7E662F4C56A2F1D19D, 2D3420F7AF99419BAC933DC5, 5C463E182F174A47A6455E26, 0844A267ACDE4A37B8BF9566, E22C8562F6E943CFB6B113ED, 58A79C394E544A95A5431732, 9FC5FAA908DF49E6BE7F3E84, 325A6492F9F14CD9AE79ED11, 28CD4D82780643DAB000DE0A, F45C41FDFCBD449785EA87A4, 3D3B0C2BD9804F5BADD7CB1D, FF5A3D36138F47BFAB2EC63A, 71B076F484F04D35BA08782B, A99DD5DC146F4D18A4487565, 225A00D3BC404B16AEEFAE82, B4AFFAEA50DB4CEDBE97E058, 367D65628F444D6FAA7EA480, CE211B8CEC1F4981AA0F6A37, 54948CF222D64CB08501B960, 4ADE93F38A644D109AE8BB69, BB5033A892BB4AEE8355A8D1, B677F98994BF46A58B37A1A6, 5DBA0637B41141B9AEAAD52C, FC51FE2A9A414877A77A94AA, 8E7513686CD14D14B86BBFDF, 9553426C5E23449BA910713A, 622AAAF797684E599AC11F88, BB1CBE5EC4AB4027A39E2672, B08B64480C1E442EA04A67D9, 19E0CD9F776E4A8A993DFABA, ADA0D8861DBE498095341BF8, D60032D442E340D28BCE5E56, 067D76B67B0B46039F11A870, 8B354F6F6F764FB5B7E1D9E5, 22C91166EE6241BD97792E52, DA2AEA915C724C31A8044534, 1D6C8433E2E44DA49CE61AE6, C70FE5E19EA842BAAA6C97F9, 23CC435D29B3400BBD850AEA, C369CB9C2E1E45E48665EA24, 89E0FBC6031A455796B5CBA8, 0BCFBC26D0AC4DF7AD87EF1E, 7103EC57D3A2486DAA6F7D98, AF1F3F58CBFE42D69DED678A, E1ECF13A854744428FA075A4, 6E27A8DE96344D279169A583, 9FEFBF8AF27B40BEB9163F37, FF760578CDBF41AA922B546A, E88E34BBBD4D468286FDF423, 50157342C75E4F0E8B42E4D8, E8B603B305CF421784C78A8D, BAFE68C70E334C42986039EC, 378359C628FA42DDB05B1950, DD4CC49B7A404F1F9D938A2E, A474E277C0E04C80960CBCE4, 4C3B990789024D78B72F0277, D4748BE2010546C78288627A); path = MoitaCRM; sourceTree = '<group>'; };
+		AE6B30BA59B94A0D940A06A2 /* MoitaCRMTests */ = {isa = PBXGroup; children = (C369CB9C2E1E45E48665EA24, 89E0FBC6031A455796B5CBA8, 0BCFBC26D0AC4DF7AD87EF1E, A474E277C0E04C80960CBCE4); path = MoitaCRMTests; sourceTree = '<group>'; };
+		E09889C162D44325BE72F2A0 /* MoitaCRMUITests */ = {isa = PBXGroup; children = (7103EC57D3A2486DAA6F7D98, 4C3B990789024D78B72F0277); path = MoitaCRMUITests; sourceTree = '<group>'; };
+		0A50373ECC854C618B0E4180 /* MoitaCRMWidgets */ = {isa = PBXGroup; children = (AF1F3F58CBFE42D69DED678A, BAFE68C70E334C42986039EC); path = MoitaCRMWidgets; sourceTree = '<group>'; };
+		C48434AC5E714A1EBBE0EEE3 /* MoitaCRMIntents */ = {isa = PBXGroup; children = (E1ECF13A854744428FA075A4, 6E27A8DE96344D279169A583, 378359C628FA42DDB05B1950); path = MoitaCRMIntents; sourceTree = '<group>'; };
+		8622D113F8894B1CAC55539F /* Products */ = {isa = PBXGroup; children = (E591EB71DF894A2A89AAE8A2, 75026472C29B413BA9A0DA28, BBBB66A35F644ED5B482D3DE, EAF8F5F2CAE643218DD4D7E4, 8E4CE6D1BF604E6CB99F6B72); sourceTree = BUILT_PRODUCTS_DIR; };
+		/* End PBXGroup section */
+
+		/* Begin PBXNativeTarget section */
+		6910277186A24D5788B67A1B /* MoitaCRM */ = {isa = PBXNativeTarget; buildConfigurationList = 6F811D37C9D94554A4307861; buildPhases = (0980F983A4AA43B7A9B06C08, A9D4661C0D4B436CA900C1EE, BD1DAACFA3594C11A842EE24); buildRules = (); dependencies = (); name = MoitaCRM; productName = MoitaCRM; productReference = E591EB71DF894A2A89AAE8A2 /* MoitaCRM.app */; productType = "com.apple.product-type.application"; };
+		84FC372D1D2149039F3E62AF /* MoitaCRMTests */ = {isa = PBXNativeTarget; buildConfigurationList = C4084DA4534F473B8ADE4ABD; buildPhases = (CC26225037DA41F69900F72C, 6CB1A53E1F6546D3BCDE7D91); buildRules = (); dependencies = (); name = MoitaCRMTests; productName = MoitaCRMTests; productReference = 75026472C29B413BA9A0DA28 /* MoitaCRMTests.xctest */; productType = "com.apple.product-type.bundle.unit-test"; };
+		220AA348171443278D337A59 /* MoitaCRMUITests */ = {isa = PBXNativeTarget; buildConfigurationList = 1BBAE63D9D6C4E679BA68816; buildPhases = (9D49F5E562E84DC38A2DF013, EFA1A3625EAA4E7B84AC2140); buildRules = (); dependencies = (); name = MoitaCRMUITests; productName = MoitaCRMUITests; productReference = BBBB66A35F644ED5B482D3DE /* MoitaCRMUITests.xctest */; productType = "com.apple.product-type.bundle.ui-testing"; };
+		D8A336CDF2AA4D1DB4E55B9D /* MoitaCRMWidgetExtension */ = {isa = PBXNativeTarget; buildConfigurationList = E6EF849204E04881831549AB; buildPhases = (6DDC19ADA96B4B919F01976E, 889A2B3AC2AB474BABD679B5, 096A75F89A514DD99DC9D444); buildRules = (); dependencies = (); name = MoitaCRMWidgetExtension; productName = MoitaCRMWidgetExtension; productReference = EAF8F5F2CAE643218DD4D7E4 /* MoitaCRMWidgetExtension.appex */; productType = "com.apple.product-type.app-extension"; };
+		0B54C1C2571648369D123D77 /* MoitaCRMIntents */ = {isa = PBXNativeTarget; buildConfigurationList = 1B76DCE54CFA42F1ACB4C88F; buildPhases = (5E5E6FBB3A604272901F62D6, F301D56C9D154401B0504334, 61F09DEC67454DE7B0B44239); buildRules = (); dependencies = (); name = MoitaCRMIntents; productName = MoitaCRMIntents; productReference = 8E4CE6D1BF604E6CB99F6B72 /* MoitaCRMIntents.appex */; productType = "com.apple.product-type.app-extension"; };
+		/* End PBXNativeTarget section */
+
+		/* Begin PBXProject section */
+		08B148EDDEF04D538001C41D /* Project object */ = {isa = PBXProject; attributes = {LastUpgradeCheck = 1500; ORGANIZATIONNAME = Moita; }; buildConfigurationList = EBE38211A854443FB6C8BA8A; compatibilityVersion = "Xcode 15.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 5626274945C4484A9DB7CD09; productRefGroup = 8622D113F8894B1CAC55539F; projectDirPath = ""; projectRoot = ""; targets = (6910277186A24D5788B67A1B, 84FC372D1D2149039F3E62AF, 220AA348171443278D337A59, D8A336CDF2AA4D1DB4E55B9D, 0B54C1C2571648369D123D77); };
+		/* End PBXProject section */
+
+		/* Begin PBXResourcesBuildPhase section */
+		A9D4661C0D4B436CA900C1EE /* PBXResourcesBuildPhase */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (FB2264FC3C214E969F4EB700, 2D3D91ADEE9F4055B3B569CC, 97A9C87F630D49B7968DBFFD, 74F3DE518AAC458CA7EFDB79, E91128816EDE41A29621C1AF, D806DDFC30DE48668BD8910A); runOnlyForDeploymentPostprocessing = 0; };
+		889A2B3AC2AB474BABD679B5 /* PBXResourcesBuildPhase */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (88D43A4E49DA4C09B25518C1); runOnlyForDeploymentPostprocessing = 0; };
+		F301D56C9D154401B0504334 /* PBXResourcesBuildPhase */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (8441DEFCF40B4AD1AF0FC8ED); runOnlyForDeploymentPostprocessing = 0; };
+		/* End PBXResourcesBuildPhase section */
+
+		/* Begin PBXSourcesBuildPhase section */
+		0980F983A4AA43B7A9B06C08 /* PBXSourcesBuildPhase */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (26A9F4C15A0E4086BC8251F2, 7AE875621CC04963B09D7D94, DFA0B63FDBC248F2B4D9BC53, D538B80E363143328AE49D49, DF563BD3B3404DDFB921DD37, 193200B36047426390C14C08, D7708A3616EC4A0892957275, 58CD466460A1453DA3641071, E97E84EE678843A4BDC67E87, 020E36F15104413F920C57C9, 5A5A07B88E4E4563968E9186, 4E4FB33BCC64407D856CCBBA, 5B43424AE92E46848B71DE7C, C12979D585D642249BE7D92E, ED9A6C1AE43B44CA8F0442B6, 2AC894D4B9DD4034AAE4E1A1, 2009A7C30C3B4B9BBB5E6936, 778312DC879240458BB66537, 8526F6385033411A868B0763, 15FD0F3969414761A714E573, 0098807DB9684F07BBED1BDA, 35228453710546B2870878AC, 68DBAF5E5E604E6DBF431D4E, 1CD90E72C8F441AB8D596303, 72753298299E4D6FA9957F26, 5DF3585F016A4F27A9B0329A, 23C755DE22C344A8A40F7EEC, 2895B1FC1AB64439A093175C, 092AC97C6A154195BD62BBE8, F51C89F9C7C443ED85D48A84, 4701FFA5F94C48CC83A3244E, 03671F9FC0AF47EDADD986D7, CBFF49A74F7941AFBFBD6170, 3CEB326C32A84126B50348CC, 44C6B68E908A498BA2308996, 8D183FC8F9314756B35F743E, 281AE940A8D0475DB15229B2, 9A9799B1E5804782AD578733, 446360202D6747CEB11EB051, 94BED2810B914A8F9A749F63, 264AD7D8EA2841B6803BEACC, 37D158FFA652429E8032D4C5); runOnlyForDeploymentPostprocessing = 0; };
+		CC26225037DA41F69900F72C /* PBXSourcesBuildPhase */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (74E6226A6856410CA764A066, 2ABE2ADE82094AF49E9D4696, 43752EE3B9A14D6CAC1300B0); runOnlyForDeploymentPostprocessing = 0; };
+		9D49F5E562E84DC38A2DF013 /* PBXSourcesBuildPhase */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (03CE50105FD04AE4A375C413); runOnlyForDeploymentPostprocessing = 0; };
+		6DDC19ADA96B4B919F01976E /* PBXSourcesBuildPhase */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (697CA6CE2B0C464DB2EF6E20); runOnlyForDeploymentPostprocessing = 0; };
+		5E5E6FBB3A604272901F62D6 /* PBXSourcesBuildPhase */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (2BEDD2EA3DFA4C3A9C16FA2D, 9B76C866A800442DA4A7B02F); runOnlyForDeploymentPostprocessing = 0; };
+		/* End PBXSourcesBuildPhase section */
+
+		/* Begin XCBuildConfiguration section */
+		DAD0F2F948214B5395244B24 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {}; name = Debug; };
+		82D08ED4CE1048F7B672132D /* Release */ = {isa = XCBuildConfiguration; buildSettings = {}; name = Release; };
+		E0A556D6812C48B19DAE3086 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; INFOPLIST_FILE = "MoitaCRM/App/Info.plist"; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.9; SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES; }; name = Debug; };
+		7DF2C4D4C4564040963B1DB1 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; INFOPLIST_FILE = "MoitaCRM/App/Info.plist"; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.9; SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES; }; name = Release; };
+		E682491E14024C88B4F2EDFE /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { INFOPLIST_FILE = "MoitaCRMTests/Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm.tests; SWIFT_VERSION = 5.9; }; name = Debug; };
+		ACD24E9A4E2A4BAD8D2C40A5 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { INFOPLIST_FILE = "MoitaCRMTests/Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm.tests; SWIFT_VERSION = 5.9; }; name = Release; };
+		A08CB2825E9C4959B970DCEF /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { INFOPLIST_FILE = "MoitaCRMUITests/Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm.uitests; SWIFT_VERSION = 5.9; }; name = Debug; };
+		BC2D07D323D84A22B9843502 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { INFOPLIST_FILE = "MoitaCRMUITests/Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm.uitests; SWIFT_VERSION = 5.9; }; name = Release; };
+		B99A20A1714447DFB9197719 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { INFOPLIST_FILE = "MoitaCRMWidgets/Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm.widget; SWIFT_VERSION = 5.9; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"; PRODUCT_NAME = "$(TARGET_NAME)"; }; name = Debug; };
+		D924C8A59CD04B11A46FF647 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { INFOPLIST_FILE = "MoitaCRMWidgets/Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm.widget; SWIFT_VERSION = 5.9; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"; PRODUCT_NAME = "$(TARGET_NAME)"; }; name = Release; };
+		30770FE414C347ED99213B6D /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { INFOPLIST_FILE = "MoitaCRMIntents/Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm.intents; SWIFT_VERSION = 5.9; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"; PRODUCT_NAME = "$(TARGET_NAME)"; }; name = Debug; };
+		E603960CCEC34146B908C2EB /* Release */ = {isa = XCBuildConfiguration; buildSettings = { INFOPLIST_FILE = "MoitaCRMIntents/Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = app.moita.crm.intents; SWIFT_VERSION = 5.9; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"; PRODUCT_NAME = "$(TARGET_NAME)"; }; name = Release; };
+		/* End XCBuildConfiguration section */
+
+		/* Begin XCConfigurationList section */
+		EBE38211A854443FB6C8BA8A /* Build configuration list for PBXProject "MoitaCRM" */ = {isa = XCConfigurationList; buildConfigurations = (DAD0F2F948214B5395244B24, 82D08ED4CE1048F7B672132D); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		6F811D37C9D94554A4307861 /* Build configuration list for PBXNativeTarget "MoitaCRM" */ = {isa = XCConfigurationList; buildConfigurations = (E0A556D6812C48B19DAE3086, 7DF2C4D4C4564040963B1DB1); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		C4084DA4534F473B8ADE4ABD /* Build configuration list for PBXNativeTarget "MoitaCRMTests" */ = {isa = XCConfigurationList; buildConfigurations = (E682491E14024C88B4F2EDFE, ACD24E9A4E2A4BAD8D2C40A5); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		1BBAE63D9D6C4E679BA68816 /* Build configuration list for PBXNativeTarget "MoitaCRMUITests" */ = {isa = XCConfigurationList; buildConfigurations = (A08CB2825E9C4959B970DCEF, BC2D07D323D84A22B9843502); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		E6EF849204E04881831549AB /* Build configuration list for PBXNativeTarget "MoitaCRMWidgetExtension" */ = {isa = XCConfigurationList; buildConfigurations = (B99A20A1714447DFB9197719, D924C8A59CD04B11A46FF647); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		1B76DCE54CFA42F1ACB4C88F /* Build configuration list for PBXNativeTarget "MoitaCRMIntents" */ = {isa = XCConfigurationList; buildConfigurations = (30770FE414C347ED99213B6D, E603960CCEC34146B908C2EB); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		/* End XCConfigurationList section */
+	};
+	rootObject = 08B148EDDEF04D538001C41D /* Project object */;
+}
